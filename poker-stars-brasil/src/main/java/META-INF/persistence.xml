@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<!-- UNIDADE DE PERSISTÊNCIA -->
 	<persistence-unit name="poker-brasil">
+
+		<!-- IMPLEMENTAÇÃO DO JPA -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- MINHAS ENTIDADES -->
+		<class>br.com.model.CadastroTorneios</class>
+
+		<!-- PROPRIEDADES DE CONEXÃO JDBC USUARIO, SENHA, URL , DRIVER -->
+	<properties>
+		<property name="javax.persistence.jdbc.user" value="postgres" /> 
+		<property name="javax.persistence.jdbc.password" value="123456" /> 
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/postgres" /> 
+		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> 	
+	
+	<!-- CONFIGURAÇÕES ESPECIFICAS DO HIBERNATE --> 
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> 
+		<property name="hibernate.show_sql" value="true" /> 
+		<property name="hibernate.format_sql" value="true" /> 
+		<property name="hibernate.hbm2ddl.auto" value="update" /> 
+	</properties>
+
+
+
 	</persistence-unit>
 </persistence>
