@@ -3,11 +3,16 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
 	version="4.0">
+
+	<!-- NAME PROJECT -->
 	<display-name>poker-brasil</display-name>
+
+	<!-- WELCOME PAGE -->
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 
+	<!-- DECLARAÇÃO DO MAPEAMENTO DO FacesServlet DO JSF -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -17,9 +22,17 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-	
+
+	<!-- ESTÁGIO DO NOSSO PROJETO -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
-		<param-value>Development</param-value>
+		<param-value>Production</param-value>
+		<!--<param-value>Development</param-value> -->
+	</context-param>
+
+	<!--  -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>bootstrap</param-value>
 	</context-param>
 </web-app>
